@@ -10,11 +10,11 @@
 `DB_PASSWORD` -> Password for database access  
 
 ## Routes
- **`/register`** to register a new user and get access token 
+ **`/register`** to register a new user and get access token   
 **`/login`** to login and get access token
 
 **`/posts/newPost`** to create a new Post  
-**`/posts/like/:id`** to register a like to a post. *id* here should be the post id
+**`/posts/like/:id`** to register a like to a post. *id* here should be the post id  
 **`/posts/comment/:id`** to register a like to a post. *id* here should be the post id
 
 
