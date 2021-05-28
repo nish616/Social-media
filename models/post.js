@@ -6,11 +6,15 @@ const commentSchema = new mongoose.Schema({
     },
     user : {
         type : mongoose.Schema.Types.ObjectId,
-        ref : "User"
+
     }
 });
 
 const postSchema = new mongoose.Schema({
+    user : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'User'
+    },
    description : {
        type : String,
        required : true
@@ -19,7 +23,7 @@ const postSchema = new mongoose.Schema({
        type : String,
        required : false
    },
-   likes : [{ type : mongoose.Schema.Types.ObjectId}], // array if user IDs
+   likes : [{ type : mongoose.Schema.Types.ObjectId}], // array of user IDs
    comments : [commentSchema]
 });
 

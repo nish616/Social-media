@@ -28,12 +28,9 @@ async function likePost (req,res){
         const userId = mongoose.Types.ObjectId(res.locals.id);
 
         const post = await Post.findOne({_id : postId});
-        
-        if( post.likes.indexOf(userId) === -1){ // Only one like per user
+        if(post.likes.indexOf(userId) === -1){ // One like per user
             post.likes.push(userId);
         }
-        
-        
         await post.save();
         res.status(200).send({success : "true", result : post});
     }catch(err){
@@ -45,9 +42,18 @@ async function likePost (req,res){
 async function commentPost (req,res){
     try{
         const postId = req.params.id; // Get post Id from front-end
-        const content = req.body.comment;
+        const comment = req.body.comment;
         const userId = mongoose.Types.ObjectId(res.locals.id);
 
+        const newComment = {
+            comment : comment,
+            user : userId
+        };
+
+        const post = await Post.findOne({_id : postId});
+        post.comments.push(newComment);
+        await post.save();
+        res.status(200).send({success : "true", result : post});
     }catch(err){
         return res.status(500).send({success : "false",mesg:err});
     }

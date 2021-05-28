@@ -10,6 +10,6 @@ router.post("/newPost", imageUpload, addPost );
 
 router.post("/like/:id",authrorize, likePost );
 
-router.post("/comment/:id", commentPost );
+router.post("/comment/:id", authrorize, commentPost );
 
 module.exports = router;
