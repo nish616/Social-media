@@ -3,12 +3,14 @@ const Post = require("../models/post");
 
 async function addPost (req,res){
     try{
+        const userId = mongoose.Types.ObjectId(res.locals.id);
         let imageUrl = "";
         const {description} = req.body;
         if(req.file){
             imageUrl = 'http://localhost:3000/images/' + req.file.filename;
         }
         const newPost = {
+            user : userId,
             description : description,
             imageUrl : imageUrl
         };
