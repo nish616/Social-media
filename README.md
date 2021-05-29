@@ -1,4 +1,4 @@
-# JWT-Auth boilerplate
+# Social media app
 
 ## Available Scripts  
 ### `npm start`
