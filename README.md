@@ -8,6 +8,7 @@
 `DB_NAME` -> Database name    
 `DB_USER` -> User name for database access  
 `DB_PASSWORD` -> Password for database access  
+`TOKEN_SECRET` -> A secret for token generation
 
 ## Routes
  **`/register`** to register a new user and get access token   
