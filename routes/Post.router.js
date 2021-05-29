@@ -6,7 +6,7 @@ const authrorize = require('../middlewares/authorize');
 const { addPost, likePost, commentPost} = require('../controllers/Post.controller');
  
 
-router.post("/newPost", imageUpload, addPost );
+router.post("/newPost", authorize, imageUpload, addPost );
 
 router.post("/like/:id",authrorize, likePost );
 
