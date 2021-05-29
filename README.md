@@ -21,6 +21,6 @@
 
 ### **Important!!**  
 Create a folder `images` in the root directory  
-Add `key`: autorization, `value`: Bearer < access token here >  
+Add `key`: authorization, `value`: Bearer < access token here >  
 To headers while making requests.
 
